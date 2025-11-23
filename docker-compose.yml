@@ -1,0 +1,140 @@
+version: '3'
+
+services:
+  # 1. DATABASE NGUỒN & METASTORE (MySQL)
+  # Dùng chung cho giả lập Source và làm Hive Metastore
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: social_trend_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # 2. STORAGE LAYER (Hadoop HDFS)
+  # Namenode: Quản lý file system
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: namenode
+    environment:
+      - CLUSTER_NAME=test
+    env_file:
+      - ./docker/hadoop/hadoop.env
+    ports:
+      - "9870:9870" # Cổng Web UI để bạn vào xem HDFS như anh Cảnh
+      - "9000:9000" # Cổng để Spark kết nối vào
+    volumes:
+      - namenode_data:/hadoop/dfs/name
+
+  # Datanode: Nơi lưu trữ dữ liệu thật
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+    env_file:
+      - ./docker/hadoop/hadoop.env
+    volumes:
+      - datanode_data:/hadoop/dfs/data
+
+  # 3. WAREHOUSE LAYER (Hive)
+  # Hive Server: Cổng giao tiếp JDBC
+  hive-server:
+    image: bde2020/hive:2.3.2-postgresql-metastore
+    container_name: hive-server
+    # Load cấu hình Hadoop (để biết namenode chạy port 9000)
+    env_file:
+      - ./docker/hadoop/hadoop.env
+    environment:
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-metastore-postgresql:5432/metastore"
+      SERVICE_PRECONDITION: "hive-metastore:9083"
+    ports:
+      - "10000:10000"
+    # Mount file cấu hình DB để tránh lỗi Derby
+    volumes:
+      - ./docker/hive/hive-site.xml:/opt/hive/conf/hive-site.xml
+    depends_on:
+      - namenode
+      - datanode
+      - hive-metastore-postgresql
+
+  # Hive Metastore: Quản lý thông tin bảng (Schema)
+  hive-metastore:
+    image: bde2020/hive:2.3.2-postgresql-metastore
+    container_name: hive-metastore
+    # Load cấu hình Hadoop (để biết namenode chạy port 9000)
+    env_file:
+      - ./docker/hadoop/hadoop.env
+    environment:
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-metastore-postgresql:5432/metastore"
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-metastore-postgresql:5432"
+    command: /opt/hive/bin/hive --service metastore
+    ports:
+      - "9083:9083"
+    # Mount file cấu hình DB để tránh lỗi Derby
+    volumes:
+      - ./docker/hive/hive-site.xml:/opt/hive/conf/hive-site.xml
+    depends_on:
+      - hive-metastore-postgresql
+
+  # Database riêng cho Hive Metastore (Postgres)
+  hive-metastore-postgresql:
+    image: bde2020/hive-metastore-postgresql:2.3.0
+    container_name: hive-metastore-postgresql
+
+ # 4. PROCESSING LAYER (Spark - Apache Official)
+  spark-master:
+    image: apache/spark:3.5.3
+    container_name: spark-master
+    hostname: spark-master
+    user: root
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+    ports:
+      - "9090:8080"
+      - "7077:7077"
+    volumes:
+      # Map file Jar vào thư mục jars của Spark để nó tự nhận diện
+      - ./jars/mysql-connector-j-8.0.33.jar:/opt/spark/jars/mysql-connector-j-8.0.33.jar
+      # Map code của bạn vào thư mục làm việc
+      - ./src:/opt/spark/work-dir/src
+      - ./data_generator:/opt/spark/work-dir/data  # (Optional)
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+
+  spark-worker:
+    image: apache/spark:3.5.3
+    container_name: spark-worker
+    user: root
+    environment:
+      - SPARK_NO_DAEMONIZE=true
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=2G
+    depends_on:
+      - spark-master
+    volumes:
+      # Worker cũng cần driver để đọc/ghi database
+      - ./jars/mysql-connector-j-8.0.33.jar:/opt/spark/jars/mysql-connector-j-8.0.33.jar
+      - ./src:/opt/spark/work-dir/src
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+
+# 5. SERVING LAYER (Visualization)
+  superset:
+    # Thay vì image, chúng ta dùng build
+    build: ./docker/superset
+    container_name: superset
+    ports:
+      - "8088:8088"
+    environment:
+      SUPERSET_SECRET_KEY: "your_secret_key_must_be_very_long_and_random"
+    depends_on:
+      - hive-server
+
+volumes:
+  mysql_data:
+  namenode_data:
+  datanode_data:

@@ -1,0 +1,16 @@
+# Bỏ qua dữ liệu giả lập (Nặng, có thể sinh lại được)
+data_generator/*.csv
+
+# Bỏ qua file cấu hình môi trường local
+.env
+
+# Bỏ qua file tạm của Python
+__pycache__/
+*.pyc
+
+# Bỏ qua thư mục ảo (nếu có)
+.venv/
+env/
+
+# Bỏ qua file hệ thống
+.DS_Store
