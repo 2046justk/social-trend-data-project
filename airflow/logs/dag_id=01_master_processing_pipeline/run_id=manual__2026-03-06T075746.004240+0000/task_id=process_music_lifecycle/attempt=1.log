@@ -1,0 +1,246 @@
+[2026-03-06T08:05:18.383+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-06T08:05:18.405+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 01_master_processing_pipeline.process_music_lifecycle manual__2026-03-06T07:57:46.004240+00:00 [queued]>
+[2026-03-06T08:05:18.416+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 01_master_processing_pipeline.process_music_lifecycle manual__2026-03-06T07:57:46.004240+00:00 [queued]>
+[2026-03-06T08:05:18.417+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-03-06T08:05:18.432+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): process_music_lifecycle> on 2026-03-06 07:57:46.004240+00:00
+[2026-03-06T08:05:18.444+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '01_master_processing_pipeline', 'process_music_lifecycle', 'manual__2026-03-06T07:57:46.004240+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/master_processing_dag.py', '--cfg-path', '/tmp/tmps5_lqtit']
+[2026-03-06T08:05:18.446+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2283) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-06T08:05:18.447+0000] {standard_task_runner.py:105} INFO - Job 17: Subtask process_music_lifecycle
+[2026-03-06T08:05:18.448+0000] {standard_task_runner.py:72} INFO - Started process 2284 to run task
+[2026-03-06T08:05:18.537+0000] {task_command.py:467} INFO - Running <TaskInstance: 01_master_processing_pipeline.process_music_lifecycle manual__2026-03-06T07:57:46.004240+00:00 [running]> on host eb669c802a68
+[2026-03-06T08:05:18.636+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='khang_data_guy' AIRFLOW_CTX_DAG_ID='01_master_processing_pipeline' AIRFLOW_CTX_TASK_ID='process_music_lifecycle' AIRFLOW_CTX_EXECUTION_DATE='2026-03-06T07:57:46.004240+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-06T07:57:46.004240+00:00'
+[2026-03-06T08:05:18.638+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-06T08:05:18.673+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-06T08:05:18.676+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        export SPARK_HOME=/home/***/.local/lib/python3.12/site-packages/pyspark &&\n        python /opt/***/src/processing/music/process_music_spark.py\n        ']
+[2026-03-06T08:05:18.689+0000] {subprocess.py:99} INFO - Output:
+[2026-03-06T08:05:23.431+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-03-06T08:05:23.561+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2026-03-06T08:05:23.562+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2026-03-06T08:05:23.566+0000] {subprocess.py:106} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2026-03-06T08:05:23.567+0000] {subprocess.py:106} INFO - com.amazonaws#aws-java-sdk-bundle added as a dependency
+[2026-03-06T08:05:23.568+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-72c17b07-df46-42bb-86a1-eda37682eada;1.0
+[2026-03-06T08:05:23.569+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-06T08:05:23.792+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2026-03-06T08:05:23.817+0000] {subprocess.py:106} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+[2026-03-06T08:05:23.843+0000] {subprocess.py:106} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2026-03-06T08:05:23.863+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 288ms :: artifacts dl 7ms
+[2026-03-06T08:05:23.864+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2026-03-06T08:05:23.865+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+[2026-03-06T08:05:23.865+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2026-03-06T08:05:23.866+0000] {subprocess.py:106} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2026-03-06T08:05:23.867+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-06T08:05:23.868+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-03-06T08:05:23.869+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-03-06T08:05:23.870+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-06T08:05:23.871+0000] {subprocess.py:106} INFO - 	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+[2026-03-06T08:05:23.872+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-06T08:05:23.873+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-72c17b07-df46-42bb-86a1-eda37682eada
+[2026-03-06T08:05:23.874+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-06T08:05:23.874+0000] {subprocess.py:106} INFO - 	0 artifacts copied, 3 already retrieved (0kB/6ms)
+[2026-03-06T08:05:24.229+0000] {subprocess.py:106} INFO - 26/03/06 08:05:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-03-06T08:05:24.534+0000] {subprocess.py:106} INFO - Setting default log level to "WARN".
+[2026-03-06T08:05:24.535+0000] {subprocess.py:106} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-03-06T08:05:34.957+0000] {subprocess.py:106} INFO - 26/03/06 08:05:34 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2026-03-06T08:11:02.852+0000] {job.py:239} ERROR - Job heartbeat failed with error
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 207, in heartbeat
+    self._merge_from(Job._fetch_from_db(self, session))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/retries.py", line 93, in wrapped_function
+    for attempt in run_with_db_retries(max_retries=retries, logger=logger, **retry_kwargs):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 443, in __iter__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/retries.py", line 102, in wrapped_function
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 335, in _fetch_from_db
+    session.merge(job)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+             ^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-03-06T08:13:19.582+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-03-06T08:15:18.704+0000] {local_task_job_runner.py:228} ERROR - Heartbeat time limit exceeded!
+[2026-03-06T08:15:19.882+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2026-03-06T08:16:15.004+0000] {subprocess.py:106} INFO - [Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 3) / 3][Stage 1:>                  (0 + 3) / 3][Stage 2:>                  (0 + 5) / 8][Stage 2:>                                                          (0 + 8) / 8][Stage 2:>                                                          (0 + 8) / 8][Stage 2:>                                                          (0 + 8) / 8][Stage 2:>                                                          (0 + 8) / 8][Stage 2:>                                                          (0 + 8) / 8]26/03/06 08:16:00 WARN HeartbeatReceiver: Removing executor driver with no recent heartbeats: 294319 ms exceeds timeout 120000 ms
+[2026-03-06T08:17:51.811+0000] {process_utils.py:132} INFO - Sending 15 to group 2284. PIDs of all processes in the group: [2286, 2287, 2295, 2483, 2490, 2491, 2492, 2493, 2494, 2495, 2514, 2518, 2284]
+[2026-03-06T08:17:55.956+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 2284
+[2026-03-06T08:18:07.918+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-03-06T08:21:07.902+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2495, name='python3', status='running', started='08:07:48') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.168+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2493, name='python3', status='disk-sleep', started='08:06:00') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.334+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2295, name='java', status='sleeping', started='08:05:19') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.427+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2492, name='python3', status='disk-sleep', started='08:06:00') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.433+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2491, name='python3', status='disk-sleep', started='08:05:59') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.465+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2514, name='python3', status='running', started='08:07:49') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.488+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2483, name='python3', status='sleeping', started='08:05:50') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.491+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2287, name='python', status='sleeping', started='08:05:17') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.507+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2518, name='python3', status='disk-sleep', started='08:12:43') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.524+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2286, name='bash', status='sleeping', started='08:05:17') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.567+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2494, name='python3', status='disk-sleep', started='08:06:44') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.590+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2284, name='airflow task ru', status='running', started='08:05:17') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.674+0000] {process_utils.py:150} WARNING - process psutil.Process(pid=2490, name='python3', status='running', started='08:05:59') did not respond to SIGTERM. Trying SIGKILL
+[2026-03-06T08:21:13.721+0000] {process_utils.py:87} INFO - Sending the signal 9 to group 2284
+[2026-03-06T08:21:14.919+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2284, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='08:05:17') (2284) terminated with exit code -9
+[2026-03-06T08:21:20.007+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2026-03-06T08:21:29.191+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-06T08:21:29.318+0000] {taskinstance.py:2604} INFO - Dependencies not met for <TaskInstance: 01_master_processing_pipeline.process_music_lifecycle manual__2026-03-06T07:57:46.004240+00:00 [up_for_retry]>, dependency 'Not In Retry Period' FAILED: Task is not ready for retry yet but will be retried automatically. Current date is 2026-03-06T08:21:29.310765+00:00 and task will be retried at 2026-03-06T08:23:22.731758+00:00.
+[2026-03-06T08:21:29.420+0000] {local_task_job_runner.py:166} INFO - Task is not able to be run
+[2026-03-06T08:21:34.494+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2518, name='python3', status='terminated', started='08:12:43') (2518) terminated with exit code None
+[2026-03-06T08:21:34.590+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2494, name='python3', status='terminated', started='08:06:44') (2494) terminated with exit code None
+[2026-03-06T08:21:34.593+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2490, name='python3', status='terminated', started='08:05:59') (2490) terminated with exit code None
+[2026-03-06T08:21:34.596+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2495, name='python3', status='terminated', started='08:07:48') (2495) terminated with exit code None
+[2026-03-06T08:21:34.610+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2493, name='python3', status='terminated', started='08:06:00') (2493) terminated with exit code None
+[2026-03-06T08:21:34.749+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2492, name='python3', status='terminated', started='08:06:00') (2492) terminated with exit code None
+[2026-03-06T08:21:34.757+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2491, name='python3', status='terminated', started='08:05:59') (2491) terminated with exit code None
+[2026-03-06T08:21:34.761+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2514, name='python3', status='terminated', started='08:07:49') (2514) terminated with exit code None
+[2026-03-06T08:21:37.897+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2483, name='python3', status='terminated', started='08:05:50') (2483) terminated with exit code None
+[2026-03-06T08:21:38.967+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2287, name='python', status='terminated', started='08:05:17') (2287) terminated with exit code None
+[2026-03-06T08:21:38.968+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2295, name='java', status='terminated', started='08:05:19') (2295) terminated with exit code None
+[2026-03-06T08:21:38.976+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2286, name='bash', status='terminated', started='08:05:17') (2286) terminated with exit code None
+[2026-03-06T08:21:38.979+0000] {standard_task_runner.py:190} ERROR - ('Job 17 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

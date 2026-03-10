@@ -1,0 +1,265 @@
+[2026-03-09T06:20:33.351+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-09T06:20:33.461+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 01_master_processing_pipeline.process_music_lifecycle scheduled__2026-03-07T00:00:00+00:00 [queued]>
+[2026-03-09T06:20:33.488+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 01_master_processing_pipeline.process_music_lifecycle scheduled__2026-03-07T00:00:00+00:00 [queued]>
+[2026-03-09T06:20:33.490+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-03-09T06:20:33.520+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): process_music_lifecycle> on 2026-03-07 00:00:00+00:00
+[2026-03-09T06:20:33.531+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '01_master_processing_pipeline', 'process_music_lifecycle', 'scheduled__2026-03-07T00:00:00+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/master_processing_dag.py', '--cfg-path', '/tmp/tmpdyw_ixrq']
+[2026-03-09T06:20:33.536+0000] {standard_task_runner.py:105} INFO - Job 31: Subtask process_music_lifecycle
+[2026-03-09T06:20:33.539+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=593) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-09T06:20:33.540+0000] {standard_task_runner.py:72} INFO - Started process 594 to run task
+[2026-03-09T06:20:33.688+0000] {task_command.py:467} INFO - Running <TaskInstance: 01_master_processing_pipeline.process_music_lifecycle scheduled__2026-03-07T00:00:00+00:00 [running]> on host fa93f86ab6a3
+[2026-03-09T06:20:33.841+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='khang_data_guy' AIRFLOW_CTX_DAG_ID='01_master_processing_pipeline' AIRFLOW_CTX_TASK_ID='process_music_lifecycle' AIRFLOW_CTX_EXECUTION_DATE='2026-03-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-07T00:00:00+00:00'
+[2026-03-09T06:20:33.846+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-09T06:20:33.930+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-09T06:20:33.932+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        export SPARK_HOME=/home/***/.local/lib/python3.12/site-packages/pyspark &&\n        python /opt/***/src/processing/music/process_music_spark.py\n        ']
+[2026-03-09T06:20:33.947+0000] {subprocess.py:99} INFO - Output:
+[2026-03-09T06:20:38.693+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-03-09T06:20:38.859+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2026-03-09T06:20:38.860+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2026-03-09T06:20:38.865+0000] {subprocess.py:106} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2026-03-09T06:20:38.866+0000] {subprocess.py:106} INFO - com.amazonaws#aws-java-sdk-bundle added as a dependency
+[2026-03-09T06:20:38.867+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-f2152575-cb9b-420d-a396-43eec172cd50;1.0
+[2026-03-09T06:20:38.868+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-09T06:20:39.148+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2026-03-09T06:20:39.178+0000] {subprocess.py:106} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+[2026-03-09T06:20:39.208+0000] {subprocess.py:106} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2026-03-09T06:20:39.237+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 358ms :: artifacts dl 14ms
+[2026-03-09T06:20:39.238+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2026-03-09T06:20:39.240+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+[2026-03-09T06:20:39.241+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2026-03-09T06:20:39.242+0000] {subprocess.py:106} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2026-03-09T06:20:39.243+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-09T06:20:39.244+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-03-09T06:20:39.245+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-03-09T06:20:39.246+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-09T06:20:39.247+0000] {subprocess.py:106} INFO - 	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+[2026-03-09T06:20:39.248+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-09T06:20:39.249+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-f2152575-cb9b-420d-a396-43eec172cd50
+[2026-03-09T06:20:39.250+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-09T06:20:45.539+0000] {subprocess.py:106} INFO - 	1 artifacts copied, 2 already retrieved (274067kB/6256ms)
+[2026-03-09T06:20:48.527+0000] {subprocess.py:106} INFO - 26/03/09 06:20:48 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-03-09T06:20:48.859+0000] {subprocess.py:106} INFO - Setting default log level to "WARN".
+[2026-03-09T06:20:48.860+0000] {subprocess.py:106} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-03-09T06:21:11.832+0000] {subprocess.py:106} INFO - 26/03/09 06:21:11 ERROR Inbox: Ignoring error
+[2026-03-09T06:21:11.868+0000] {subprocess.py:106} INFO - java.lang.NullPointerException: Cannot invoke "org.apache.spark.storage.BlockManagerId.executorId()" because "idWithoutTopologyInfo" is null
+[2026-03-09T06:21:11.870+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint.org$apache$spark$storage$BlockManagerMasterEndpoint$$register(BlockManagerMasterEndpoint.scala:677)
+[2026-03-09T06:21:11.871+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:133)
+[2026-03-09T06:21:11.877+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:103)
+[2026-03-09T06:21:11.879+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:213)
+[2026-03-09T06:21:11.880+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:100)
+[2026-03-09T06:21:11.882+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:75)
+[2026-03-09T06:21:11.887+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:41)
+[2026-03-09T06:21:11.891+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2026-03-09T06:21:11.893+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2026-03-09T06:21:11.894+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2026-03-09T06:21:11.895+0000] {subprocess.py:106} INFO - 26/03/09 06:21:11 WARN Executor: Issue communicating with driver in heartbeater
+[2026-03-09T06:21:11.896+0000] {subprocess.py:106} INFO - org.apache.spark.SparkException: Exception thrown in awaitResult:
+[2026-03-09T06:21:11.897+0000] {subprocess.py:106} INFO - 	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+[2026-03-09T06:21:11.902+0000] {subprocess.py:106} INFO - 	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+[2026-03-09T06:21:11.905+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+[2026-03-09T06:21:11.907+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+[2026-03-09T06:21:11.909+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:85)
+[2026-03-09T06:21:11.909+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMaster.registerBlockManager(BlockManagerMaster.scala:80)
+[2026-03-09T06:21:11.910+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManager.reregister(BlockManager.scala:642)
+[2026-03-09T06:21:11.910+0000] {subprocess.py:106} INFO - 	at org.apache.spark.executor.Executor.reportHeartBeat(Executor.scala:1223)
+[2026-03-09T06:21:11.910+0000] {subprocess.py:106} INFO - 	at org.apache.spark.executor.Executor.$anonfun$heartbeater$1(Executor.scala:295)
+[2026-03-09T06:21:11.911+0000] {subprocess.py:106} INFO - 	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2026-03-09T06:21:11.911+0000] {subprocess.py:106} INFO - 	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+[2026-03-09T06:21:11.912+0000] {subprocess.py:106} INFO - 	at org.apache.spark.Heartbeater$$anon$1.run(Heartbeater.scala:46)
+[2026-03-09T06:21:11.912+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2026-03-09T06:21:11.912+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+[2026-03-09T06:21:11.913+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+[2026-03-09T06:21:11.913+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2026-03-09T06:21:11.914+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2026-03-09T06:21:11.914+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2026-03-09T06:21:11.914+0000] {subprocess.py:106} INFO - Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.spark.storage.BlockManagerId.executorId()" because "idWithoutTopologyInfo" is null
+[2026-03-09T06:21:11.915+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint.org$apache$spark$storage$BlockManagerMasterEndpoint$$register(BlockManagerMasterEndpoint.scala:677)
+[2026-03-09T06:21:11.915+0000] {subprocess.py:106} INFO - 	at org.apache.spark.storage.BlockManagerMasterEndpoint$$anonfun$receiveAndReply$1.applyOrElse(BlockManagerMasterEndpoint.scala:133)
+[2026-03-09T06:21:11.915+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.$anonfun$process$1(Inbox.scala:103)
+[2026-03-09T06:21:11.916+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:213)
+[2026-03-09T06:21:11.916+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:100)
+[2026-03-09T06:21:11.916+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop.org$apache$spark$rpc$netty$MessageLoop$$receiveLoop(MessageLoop.scala:75)
+[2026-03-09T06:21:11.917+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.MessageLoop$$anon$1.run(MessageLoop.scala:41)
+[2026-03-09T06:21:11.917+0000] {subprocess.py:106} INFO - 	... 3 more
+[2026-03-09T06:21:18.731+0000] {subprocess.py:106} INFO - 26/03/09 06:21:18 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2026-03-09T06:22:48.017+0000] {job.py:239} ERROR - Job heartbeat failed with error
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 233, in heartbeat
+    heartbeat_callback(session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/local_task_job_runner.py", line 284, in heartbeat_callback
+    self.task_instance.refresh_from_db()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2360, in refresh_from_db
+    _refresh_from_db(task_instance=self, session=session, lock_for_update=lock_for_update)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 873, in _refresh_from_db
+    ti = TaskInstance.get_task_instance(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2346, in get_task_instance
+    return query.one_or_none()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2850, in one_or_none
+    return self._iter().one_or_none()
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2916, in _iter
+    result = self.session.execute(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-03-09T06:23:00.590+0000] {job.py:254} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-03-09T06:23:07.626+0000] {job.py:229} INFO - Heartbeat recovered after 89.01 seconds
+[2026-03-09T06:23:24.756+0000] {subprocess.py:106} INFO - [Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 2:>                                                          (0 + 8) / 8][Stage 2:>                                                          (0 + 8) / 8][Stage 2:============================================>              (6 + 2) / 8][Stage 4:>                                                          (0 + 1) / 1]                                                                                [Stage 6:>                                                          (0 + 1) / 1]                                                                                [Stage 7:>                                                          (0 + 0) / 3][Stage 7:>                                                          (0 + 3) / 3][Stage 7:>                  (0 + 3) / 3][Stage 8:>                  (0 + 5) / 8][Stage 7:============>      (2 + 1) / 3][Stage 8:>                  (0 + 7) / 8][Stage 8:>                                                          (0 + 8) / 8][Stage 8:=======>                                                   (1 + 7) / 8][Stage 8:==============>                                            (2 + 6) / 8]                                                                                [Stage 12:>                                                         (0 + 1) / 1]                                                                                🚀 [MUSIC MODULE] Bắt đầu hợp nhất và tính toán Lifecycle...
+[2026-03-09T06:23:24.895+0000] {subprocess.py:106} INFO - ⏳ Đang đọc dữ liệu YouTube...
+[2026-03-09T06:23:24.910+0000] {subprocess.py:106} INFO - ⏳ Đang đọc dữ liệu Facebook...
+[2026-03-09T06:23:24.917+0000] {subprocess.py:106} INFO - ⏳ Đang đọc dữ liệu TikTok...
+[2026-03-09T06:23:24.921+0000] {subprocess.py:106} INFO - 📊 [DATA UNIFIED] Dữ liệu hợp nhất:
+[2026-03-09T06:23:24.936+0000] {subprocess.py:106} INFO - +--------+------------+-----------+----------------------------------------------------------------+
+[2026-03-09T06:23:24.939+0000] {subprocess.py:106} INFO - |platform|topic_name  |buzz_volume|content                                                         |
+[2026-03-09T06:23:24.942+0000] {subprocess.py:106} INFO - +--------+------------+-----------+----------------------------------------------------------------+
+[2026-03-09T06:23:24.944+0000] {subprocess.py:106} INFO - |youtube |Sơn Tùng MTP|166372213  |SƠN TÙNG M-TP | ĐỪNG LÀM TRÁI TIM ANH ĐAU | OFFICIAL MUSIC VIDEO|
+[2026-03-09T06:23:24.951+0000] {subprocess.py:106} INFO - |youtube |Sơn Tùng MTP|433838682  |NƠI NÀY CÓ ANH | OFFICIAL MUSIC VIDEO | SƠN TÙNG M-TP           |
+[2026-03-09T06:23:24.955+0000] {subprocess.py:106} INFO - |youtube |Sơn Tùng MTP|111114923  |VIRAL CLIP - MỘT NĂM MỚI BÌNH AN | SƠN TÙNG M-TP                |
+[2026-03-09T06:23:24.957+0000] {subprocess.py:106} INFO - |youtube |Sơn Tùng MTP|47240193   |Nắng Ấm Xa Dần - Sơn Tùng M-TP                                  |
+[2026-03-09T06:23:24.960+0000] {subprocess.py:106} INFO - |youtube |Sơn Tùng MTP|168420349  |Buông Đôi Tay Nhau Ra | OFFICIAL MUSIC VIDEO | Sơn Tùng M-TP    |
+[2026-03-09T06:23:24.962+0000] {subprocess.py:106} INFO - +--------+------------+-----------+----------------------------------------------------------------+
+[2026-03-09T06:23:24.965+0000] {subprocess.py:106} INFO - only showing top 5 rows
+[2026-03-09T06:23:24.971+0000] {subprocess.py:106} INFO - 
+[2026-03-09T06:23:24.974+0000] {subprocess.py:106} INFO - 🧠 [BUSINESS LOGIC] Tính toán Lifecycle...
+[2026-03-09T06:23:24.983+0000] {subprocess.py:106} INFO - ⚖️ [DECISION OUTPUT] Kết quả phân tích Vòng đời:
+[2026-03-09T06:23:24.990+0000] {subprocess.py:106} INFO - +----------------+-----------------+----------+------------------+--------------------------+
+[2026-03-09T06:23:24.991+0000] {subprocess.py:106} INFO - |topic_name      |total_buzz_volume|topic_type|lifecycle_decision|processed_at              |
+[2026-03-09T06:23:24.993+0000] {subprocess.py:106} INFO - +----------------+-----------------+----------+------------------+--------------------------+
+[2026-03-09T06:23:24.995+0000] {subprocess.py:106} INFO - |Sơn Tùng MTP    |1765650244       |Organic   |AUTO-EXTENDED     |2026-03-09 06:21:35.455426|
+[2026-03-09T06:23:24.998+0000] {subprocess.py:106} INFO - |Du lịch Vũng Tàu|180000           |Client    |MONITORING        |2026-03-09 06:21:35.455426|
+[2026-03-09T06:23:25.001+0000] {subprocess.py:106} INFO - +----------------+-----------------+----------+------------------+--------------------------+
+[2026-03-09T06:23:25.003+0000] {subprocess.py:106} INFO - 
+[2026-03-09T06:23:25.004+0000] {subprocess.py:106} INFO - 💾 [STORAGE] Đang lưu kết quả xuống Data Lake: s3a://social-trend-lake/silver/music/lifecycle_report/
+[2026-03-09T06:23:25.006+0000] {subprocess.py:106} INFO - ✅ [HOÀN TẤT] Dữ liệu Music đã sẵn sàng để truy vấn bằng Trino!
+[2026-03-09T06:23:37.014+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-09T06:23:38.662+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-09T06:23:38.672+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=01_master_processing_pipeline, task_id=process_music_lifecycle, run_id=scheduled__2026-03-07T00:00:00+00:00, execution_date=20260307T000000, start_date=20260309T062033, end_date=20260309T062338
+[2026-03-09T06:23:39.009+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-09T06:23:39.361+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-09T06:23:39.368+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,46 @@
+[2026-03-10T15:54:47.415+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-10T15:54:47.461+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 01_music_ingestion_realtime.crawl_youtube_data scheduled__2026-03-10T14:00:00+00:00 [queued]>
+[2026-03-10T15:54:47.479+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 01_music_ingestion_realtime.crawl_youtube_data scheduled__2026-03-10T14:00:00+00:00 [queued]>
+[2026-03-10T15:54:47.480+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-03-10T15:54:47.509+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): crawl_youtube_data> on 2026-03-10 14:00:00+00:00
+[2026-03-10T15:54:47.524+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '01_music_ingestion_realtime', 'crawl_youtube_data', 'scheduled__2026-03-10T14:00:00+00:00', '--job-id', '66', '--raw', '--subdir', 'DAGS_FOLDER/music_ingestion_dag.py', '--cfg-path', '/tmp/tmpezgfpvja']
+[2026-03-10T15:54:47.529+0000] {standard_task_runner.py:105} INFO - Job 66: Subtask crawl_youtube_data
+[2026-03-10T15:54:47.531+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=196) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-10T15:54:47.533+0000] {standard_task_runner.py:72} INFO - Started process 199 to run task
+[2026-03-10T15:54:47.644+0000] {task_command.py:467} INFO - Running <TaskInstance: 01_music_ingestion_realtime.crawl_youtube_data scheduled__2026-03-10T14:00:00+00:00 [running]> on host fa93f86ab6a3
+[2026-03-10T15:54:47.831+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='khang_data_guy' AIRFLOW_CTX_DAG_ID='01_music_ingestion_realtime' AIRFLOW_CTX_TASK_ID='crawl_youtube_data' AIRFLOW_CTX_EXECUTION_DATE='2026-03-10T14:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-10T14:00:00+00:00'
+[2026-03-10T15:54:47.834+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-10T15:54:47.878+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-10T15:54:47.886+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/src/ingestion/music/ingest_youtube.py']
+[2026-03-10T15:54:47.916+0000] {subprocess.py:99} INFO - Output:
+[2026-03-10T16:08:44.148+0000] {subprocess.py:106} INFO - --- STARTING SENIOR INGESTION (YOUTUBE - NLP READY) ---
+[2026-03-10T16:08:44.181+0000] {subprocess.py:106} INFO - 🔎 Crawling YouTube for: son tung mtp, chung ta cua tuong lai
+[2026-03-10T16:08:44.183+0000] {subprocess.py:106} INFO - ⚠️ Lỗi Upload MinIO (Có thể do chạy Local không thấy MinIO Docker): HTTPConnectionPool(host='minio', port=9000): Max retries exceeded with url: /social-trend-lake?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b90b490b350>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-03-10T16:08:44.185+0000] {subprocess.py:106} INFO - 💾 Đã lưu tạm ra file local: youtube_data_topic_1.json
+[2026-03-10T16:08:44.186+0000] {subprocess.py:106} INFO - ✨ Processed topic: Chúng Ta Của Tương Lai (10 videos)
+[2026-03-10T16:08:44.187+0000] {subprocess.py:106} INFO - 🔎 Crawling YouTube for: bich phuong, nang chen tieu sau
+[2026-03-10T16:08:44.189+0000] {subprocess.py:106} INFO - ⚠️ Lỗi Upload MinIO (Có thể do chạy Local không thấy MinIO Docker): HTTPConnectionPool(host='minio', port=9000): Max retries exceeded with url: /social-trend-lake?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b90b4909f70>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-03-10T16:08:44.190+0000] {subprocess.py:106} INFO - 💾 Đã lưu tạm ra file local: youtube_data_topic_2.json
+[2026-03-10T16:08:44.193+0000] {subprocess.py:106} INFO - ✨ Processed topic: Nâng Chén Tiêu Sầu (10 videos)
+[2026-03-10T16:08:44.195+0000] {subprocess.py:106} INFO - 🔎 Crawling YouTube for: son tung, dung lam trai tim anh dau
+[2026-03-10T16:08:44.196+0000] {subprocess.py:106} INFO - ⚠️ Lỗi Upload MinIO (Có thể do chạy Local không thấy MinIO Docker): HTTPConnectionPool(host='minio', port=9000): Max retries exceeded with url: /social-trend-lake?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b90b490a420>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-03-10T16:08:44.197+0000] {subprocess.py:106} INFO - 💾 Đã lưu tạm ra file local: youtube_data_topic_3.json
+[2026-03-10T16:08:44.200+0000] {subprocess.py:106} INFO - ✨ Processed topic: Đừng Làm Trái Tim Anh Đau (10 videos)
+[2026-03-10T16:08:44.201+0000] {subprocess.py:106} INFO - 🔎 Crawling YouTube for: tho oi, phim tho oi
+[2026-03-10T16:08:44.201+0000] {subprocess.py:106} INFO - ⚠️ Lỗi Upload MinIO (Có thể do chạy Local không thấy MinIO Docker): HTTPConnectionPool(host='minio', port=9000): Max retries exceeded with url: /social-trend-lake?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b90b490de80>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-03-10T16:08:44.202+0000] {subprocess.py:106} INFO - 💾 Đã lưu tạm ra file local: youtube_data_topic_4.json
+[2026-03-10T16:08:44.204+0000] {subprocess.py:106} INFO - ✨ Processed topic: Phim Thỏ Ơi (10 videos)
+[2026-03-10T16:08:44.205+0000] {subprocess.py:106} INFO - 🔎 Crawling YouTube for: nha ba toi mot phong, tran thanh
+[2026-03-10T16:08:44.206+0000] {subprocess.py:106} INFO - ⚠️ Lỗi Upload MinIO (Có thể do chạy Local không thấy MinIO Docker): HTTPConnectionPool(host='minio', port=9000): Max retries exceeded with url: /social-trend-lake?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b90b490a150>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-03-10T16:08:44.208+0000] {subprocess.py:106} INFO - 💾 Đã lưu tạm ra file local: youtube_data_topic_5.json
+[2026-03-10T16:08:44.209+0000] {subprocess.py:106} INFO - ✨ Processed topic: Nhà ba tôi một phòng (10 videos)
+[2026-03-10T16:08:44.209+0000] {subprocess.py:106} INFO - 🔎 Crawling YouTube for: mui pho, dao pho va piano
+[2026-03-10T16:08:44.210+0000] {subprocess.py:106} INFO - ⚠️ Lỗi Upload MinIO (Có thể do chạy Local không thấy MinIO Docker): HTTPConnectionPool(host='minio', port=9000): Max retries exceeded with url: /social-trend-lake?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b90b490da30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-03-10T16:08:44.212+0000] {subprocess.py:106} INFO - 💾 Đã lưu tạm ra file local: youtube_data_topic_6.json
+[2026-03-10T16:08:44.213+0000] {subprocess.py:106} INFO - ✨ Processed topic: Mùi phở (10 videos)
+[2026-03-10T16:08:44.835+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-10T16:08:44.961+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-10T16:08:44.964+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=01_music_ingestion_realtime, task_id=crawl_youtube_data, run_id=scheduled__2026-03-10T14:00:00+00:00, execution_date=20260310T140000, start_date=20260310T155447, end_date=20260310T160844
+[2026-03-10T16:08:45.060+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-10T16:08:45.112+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-10T16:08:45.116+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
