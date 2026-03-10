@@ -1797,3 +1797,416 @@
 [2026-03-10T18:26:05.053+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:26:05.053+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2026-03-10T18:26:05.085+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:26:05.084+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
 [2026-03-10T18:26:05.118+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.153 seconds
+[2026-03-10T18:26:35.659+0000] {processor.py:186} INFO - Started process (PID=5397) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:26:35.660+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:26:35.663+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:26:35.663+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:26:35.694+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:26:35.726+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:26:35.725+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:26:35.753+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:26:35.753+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:26:35.781+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.129 seconds
+[2026-03-10T18:27:06.555+0000] {processor.py:186} INFO - Started process (PID=5417) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:27:06.558+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:27:06.571+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:27:06.570+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:27:06.625+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:27:06.672+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:27:06.672+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:27:06.732+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:27:06.731+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:27:06.775+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.230 seconds
+[2026-03-10T18:27:38.046+0000] {processor.py:186} INFO - Started process (PID=5437) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:27:38.049+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:27:38.056+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:27:38.055+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:27:38.452+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:27:38.556+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:27:38.556+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:27:38.652+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:27:38.651+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:27:38.745+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.768 seconds
+[2026-03-10T18:28:08.877+0000] {processor.py:186} INFO - Started process (PID=5457) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:28:08.879+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:28:08.882+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:28:08.882+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:28:08.916+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:28:08.950+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:28:08.950+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:28:08.981+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:28:08.981+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:28:09.014+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.144 seconds
+[2026-03-10T18:28:39.745+0000] {processor.py:186} INFO - Started process (PID=5477) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:28:39.747+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:28:39.750+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:28:39.750+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:28:39.783+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:28:39.813+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:28:39.813+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:28:39.843+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:28:39.843+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:28:39.872+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.133 seconds
+[2026-03-10T18:29:10.708+0000] {processor.py:186} INFO - Started process (PID=5497) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:29:10.709+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:29:10.712+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:29:10.712+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:29:10.744+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:29:10.776+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:29:10.775+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:29:10.802+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:29:10.801+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:29:10.829+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.129 seconds
+[2026-03-10T18:29:41.583+0000] {processor.py:186} INFO - Started process (PID=5517) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:29:41.584+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:29:41.587+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:29:41.586+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:29:41.610+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:29:41.638+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:29:41.638+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:29:41.663+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:29:41.662+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:29:41.683+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.107 seconds
+[2026-03-10T18:30:12.397+0000] {processor.py:186} INFO - Started process (PID=5537) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:30:12.398+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:30:12.400+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:30:12.400+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:30:12.421+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:30:12.453+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:30:12.452+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:30:12.482+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:30:12.481+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:30:12.509+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.119 seconds
+[2026-03-10T18:30:43.285+0000] {processor.py:186} INFO - Started process (PID=5557) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:30:43.287+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:30:43.292+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:30:43.291+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:30:43.329+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:30:43.376+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:30:43.375+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:30:43.407+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:30:43.406+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:30:43.438+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.163 seconds
+[2026-03-10T18:31:14.218+0000] {processor.py:186} INFO - Started process (PID=5577) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:31:14.219+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:31:14.222+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:31:14.222+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:31:14.250+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:31:14.279+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:31:14.279+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:31:14.304+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:31:14.304+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:31:14.330+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.117 seconds
+[2026-03-10T18:31:45.103+0000] {processor.py:186} INFO - Started process (PID=5597) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:31:45.104+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:31:45.107+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:31:45.107+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:31:45.145+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:31:45.178+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:31:45.178+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:31:45.208+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:31:45.208+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:31:45.243+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.146 seconds
+[2026-03-10T18:32:15.987+0000] {processor.py:186} INFO - Started process (PID=5617) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:32:15.989+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:32:15.991+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:32:15.991+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:32:16.011+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:32:16.041+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:32:16.041+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:32:16.063+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:32:16.062+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:32:16.088+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.106 seconds
+[2026-03-10T18:32:46.930+0000] {processor.py:186} INFO - Started process (PID=5637) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:32:46.932+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:32:46.934+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:32:46.934+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:32:46.972+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:32:47.000+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:32:47.000+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:32:47.023+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:32:47.023+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:32:47.050+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.126 seconds
+[2026-03-10T18:33:17.842+0000] {processor.py:186} INFO - Started process (PID=5657) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:33:17.843+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:33:17.846+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:33:17.846+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:33:17.872+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:33:17.902+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:33:17.902+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:33:17.927+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:33:17.927+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:33:17.948+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.112 seconds
+[2026-03-10T18:33:48.797+0000] {processor.py:186} INFO - Started process (PID=5677) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:33:48.798+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:33:48.800+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:33:48.800+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:33:48.818+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:33:48.843+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:33:48.843+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:33:48.866+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:33:48.865+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:33:48.891+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.100 seconds
+[2026-03-10T18:34:19.677+0000] {processor.py:186} INFO - Started process (PID=5697) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:34:19.678+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:34:19.682+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:34:19.681+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:34:19.710+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:34:19.739+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:34:19.739+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:34:19.763+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:34:19.763+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:34:19.788+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.116 seconds
+[2026-03-10T18:34:50.582+0000] {processor.py:186} INFO - Started process (PID=5717) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:34:50.583+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:34:50.586+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:34:50.586+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:34:50.614+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:34:50.640+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:34:50.640+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:34:50.661+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:34:50.661+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:34:50.688+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.112 seconds
+[2026-03-10T18:35:21.546+0000] {processor.py:186} INFO - Started process (PID=5737) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:35:21.548+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:35:21.551+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:35:21.551+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:35:21.593+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:35:21.627+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:35:21.627+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:35:21.651+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:35:21.650+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:35:21.677+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.137 seconds
+[2026-03-10T18:35:52.402+0000] {processor.py:186} INFO - Started process (PID=5757) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:35:52.403+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:35:52.406+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:35:52.405+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:35:52.432+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:35:52.459+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:35:52.459+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:35:52.481+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:35:52.481+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:35:52.508+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.112 seconds
+[2026-03-10T18:36:23.396+0000] {processor.py:186} INFO - Started process (PID=5777) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:36:23.397+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:36:23.399+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:36:23.399+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:36:23.438+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:36:23.469+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:36:23.469+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:36:23.491+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:36:23.491+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:36:23.515+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.124 seconds
+[2026-03-10T18:36:54.359+0000] {processor.py:186} INFO - Started process (PID=5797) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:36:54.360+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:36:54.363+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:36:54.362+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:36:54.384+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:36:54.410+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:36:54.410+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:36:54.434+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:36:54.434+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:36:54.458+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.105 seconds
+[2026-03-10T18:37:25.310+0000] {processor.py:186} INFO - Started process (PID=5817) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:37:25.311+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:37:25.314+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:37:25.313+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:37:25.337+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:37:25.364+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:37:25.364+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:37:25.386+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:37:25.386+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:37:25.413+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.108 seconds
+[2026-03-10T18:44:59.663+0000] {processor.py:186} INFO - Started process (PID=5837) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:44:59.664+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:44:59.667+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:44:59.666+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:44:59.698+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:44:59.727+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:44:59.726+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:44:59.748+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:44:59.748+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:44:59.773+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.117 seconds
+[2026-03-10T18:45:30.458+0000] {processor.py:186} INFO - Started process (PID=5857) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:45:30.459+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:45:30.464+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:45:30.463+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:45:30.490+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:45:30.521+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:45:30.521+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:45:30.545+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:45:30.545+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:45:30.575+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.125 seconds
+[2026-03-10T18:46:01.288+0000] {processor.py:186} INFO - Started process (PID=5877) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:46:01.290+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:46:01.293+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:46:01.293+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:46:01.316+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:46:01.344+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:46:01.343+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:46:01.365+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:46:01.365+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:46:01.396+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.114 seconds
+[2026-03-10T18:46:32.153+0000] {processor.py:186} INFO - Started process (PID=5897) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:46:32.155+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:46:32.158+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:46:32.157+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:46:32.180+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:46:32.208+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:46:32.208+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:46:32.231+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:46:32.231+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:46:32.256+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.108 seconds
+[2026-03-10T18:47:03.037+0000] {processor.py:186} INFO - Started process (PID=5917) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:47:03.039+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:47:03.043+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:47:03.042+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:47:03.074+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:47:03.107+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:47:03.107+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:47:03.136+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:47:03.135+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:47:03.163+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.134 seconds
+[2026-03-10T18:47:33.970+0000] {processor.py:186} INFO - Started process (PID=5937) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:47:33.972+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:47:33.975+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:47:33.975+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:47:34.015+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:47:34.053+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:47:34.053+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:47:34.089+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:47:34.088+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:47:34.118+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.154 seconds
+[2026-03-10T18:48:04.918+0000] {processor.py:186} INFO - Started process (PID=5957) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:48:04.919+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:48:04.921+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:48:04.921+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:48:04.949+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:48:04.983+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:48:04.983+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:48:05.014+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:48:05.013+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:48:05.045+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.134 seconds
+[2026-03-10T18:48:35.785+0000] {processor.py:186} INFO - Started process (PID=5977) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:48:35.787+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:48:35.789+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:48:35.789+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:48:35.814+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:48:35.845+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:48:35.845+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:48:35.871+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:48:35.871+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:48:35.902+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.123 seconds
+[2026-03-10T18:49:06.479+0000] {processor.py:186} INFO - Started process (PID=5997) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:49:06.481+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:49:06.485+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:49:06.484+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:49:06.511+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:49:06.541+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:49:06.541+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:49:06.569+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:49:06.569+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:49:06.593+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.122 seconds
+[2026-03-10T18:49:37.206+0000] {processor.py:186} INFO - Started process (PID=6017) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:49:37.207+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:49:37.210+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:49:37.210+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:49:37.235+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:49:37.266+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:49:37.266+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:49:37.288+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:49:37.288+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:49:37.315+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.114 seconds
+[2026-03-10T18:50:08.163+0000] {processor.py:186} INFO - Started process (PID=6037) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:50:08.165+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:50:08.168+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:50:08.168+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:50:08.191+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:50:08.222+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:50:08.222+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:50:08.248+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:50:08.247+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:50:08.273+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.116 seconds
+[2026-03-10T18:50:39.142+0000] {processor.py:186} INFO - Started process (PID=6057) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:50:39.144+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:50:39.150+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:50:39.148+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:50:39.203+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:50:39.236+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:50:39.235+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:50:39.264+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:50:39.263+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:50:39.284+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.151 seconds
+[2026-03-10T18:51:10.013+0000] {processor.py:186} INFO - Started process (PID=6077) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:51:10.014+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:51:10.018+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:51:10.017+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:51:10.047+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:51:10.083+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:51:10.082+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:51:10.112+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:51:10.111+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:51:10.134+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.130 seconds
+[2026-03-10T18:51:40.869+0000] {processor.py:186} INFO - Started process (PID=6097) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:51:40.870+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:51:40.873+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:51:40.873+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:51:40.898+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:51:40.926+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:51:40.926+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:51:40.950+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:51:40.950+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:51:40.975+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.114 seconds
+[2026-03-10T18:52:11.722+0000] {processor.py:186} INFO - Started process (PID=6117) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:52:11.724+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:52:11.727+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:52:11.726+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:52:11.758+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:52:11.789+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:52:11.789+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:52:11.815+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:52:11.814+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:52:11.842+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.126 seconds
+[2026-03-10T18:52:42.538+0000] {processor.py:186} INFO - Started process (PID=6137) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:52:42.540+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:52:42.542+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:52:42.542+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:52:42.564+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:52:42.592+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:52:42.591+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:52:42.614+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:52:42.614+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:52:42.644+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.111 seconds
+[2026-03-10T18:53:13.338+0000] {processor.py:186} INFO - Started process (PID=6157) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:53:13.339+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:53:13.341+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:53:13.341+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:53:13.361+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:53:13.387+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:53:13.387+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:53:13.409+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:53:13.408+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:53:13.431+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.099 seconds
+[2026-03-10T18:53:44.159+0000] {processor.py:186} INFO - Started process (PID=6177) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:53:44.160+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:53:44.163+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:53:44.163+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:53:44.191+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:53:44.220+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:53:44.219+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:53:44.244+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:53:44.244+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:53:44.275+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.123 seconds
+[2026-03-10T18:54:15.115+0000] {processor.py:186} INFO - Started process (PID=6197) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:54:15.116+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:54:15.119+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:54:15.119+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:54:15.136+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:54:15.162+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:54:15.162+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:54:15.184+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:54:15.184+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:54:15.209+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.099 seconds
+[2026-03-10T18:54:46.064+0000] {processor.py:186} INFO - Started process (PID=6217) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:54:46.066+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:54:46.068+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:54:46.068+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:54:46.090+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:54:46.119+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:54:46.119+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:54:46.141+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:54:46.140+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:54:46.163+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.105 seconds
+[2026-03-10T18:55:17.070+0000] {processor.py:186} INFO - Started process (PID=6237) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:55:17.071+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:55:17.073+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:55:17.073+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:55:17.104+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:55:17.132+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:55:17.131+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:55:17.160+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:55:17.160+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:55:17.184+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.120 seconds
+[2026-03-10T18:55:47.937+0000] {processor.py:186} INFO - Started process (PID=6257) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:55:47.939+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:55:47.941+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:55:47.941+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:55:47.962+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:55:47.988+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:55:47.987+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:55:48.009+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:55:48.009+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:55:48.037+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.105 seconds
+[2026-03-10T18:56:18.835+0000] {processor.py:186} INFO - Started process (PID=6277) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:56:18.836+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:56:18.839+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:56:18.839+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:56:18.878+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:56:18.906+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:56:18.906+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:56:18.928+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:56:18.928+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:56:18.953+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.124 seconds
+[2026-03-10T18:56:49.746+0000] {processor.py:186} INFO - Started process (PID=6297) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:56:49.747+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:56:49.750+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:56:49.750+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:56:49.771+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:56:49.803+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:56:49.802+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:56:49.830+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:56:49.829+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:56:49.862+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.123 seconds
+[2026-03-10T18:57:20.419+0000] {processor.py:186} INFO - Started process (PID=6317) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:57:20.420+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:57:20.423+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:57:20.423+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:57:20.452+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:57:20.482+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:57:20.482+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:57:20.506+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:57:20.506+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:57:20.532+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.119 seconds
+[2026-03-10T18:57:51.243+0000] {processor.py:186} INFO - Started process (PID=6337) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:57:51.244+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:57:51.246+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:57:51.246+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:57:51.263+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:57:51.289+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:57:51.289+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:57:51.310+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:57:51.310+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:57:51.335+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.099 seconds
+[2026-03-10T18:58:22.082+0000] {processor.py:186} INFO - Started process (PID=6357) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:58:22.083+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:58:22.085+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:58:22.085+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:58:22.108+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:58:22.134+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:58:22.133+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:58:22.156+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:58:22.156+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:58:22.181+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.104 seconds
+[2026-03-10T18:58:52.895+0000] {processor.py:186} INFO - Started process (PID=6377) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:58:52.897+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:58:52.901+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:58:52.900+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:58:52.923+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:58:52.951+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:58:52.951+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:58:52.975+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:58:52.974+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:58:53.003+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.116 seconds
+[2026-03-10T18:59:23.753+0000] {processor.py:186} INFO - Started process (PID=6397) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:59:23.756+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:59:23.759+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:59:23.759+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:59:23.781+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:59:23.809+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:59:23.809+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:59:23.836+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:59:23.836+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:59:23.865+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.118 seconds
+[2026-03-10T18:59:54.578+0000] {processor.py:186} INFO - Started process (PID=6417) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:59:54.579+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T18:59:54.582+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:59:54.582+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:59:54.605+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T18:59:54.639+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:59:54.639+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T18:59:54.668+0000] {logging_mixin.py:190} INFO - [2026-03-10T18:59:54.667+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T18:59:54.697+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.125 seconds
+[2026-03-10T19:00:25.419+0000] {processor.py:186} INFO - Started process (PID=6453) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:00:25.420+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T19:00:25.423+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:00:25.422+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:00:25.446+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:00:25.479+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:00:25.478+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T19:00:25.508+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:00:25.507+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T19:00:25.537+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.126 seconds
+[2026-03-10T19:00:56.104+0000] {processor.py:186} INFO - Started process (PID=6473) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:00:56.106+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T19:00:56.110+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:00:56.110+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:00:56.132+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:00:56.162+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:00:56.162+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T19:00:56.184+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:00:56.184+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T19:00:56.216+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.117 seconds
+[2026-03-10T19:01:27.102+0000] {processor.py:186} INFO - Started process (PID=6493) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:01:27.103+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T19:01:27.105+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:01:27.105+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:01:27.123+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:01:27.150+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:01:27.150+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T19:01:27.174+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:01:27.174+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T19:01:27.210+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.114 seconds
+[2026-03-10T19:01:57.825+0000] {processor.py:186} INFO - Started process (PID=6513) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:01:57.827+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T19:01:57.830+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:01:57.829+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:01:57.847+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:01:57.875+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:01:57.874+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T19:01:57.895+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:01:57.895+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T19:01:57.918+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.098 seconds
+[2026-03-10T19:02:28.759+0000] {processor.py:186} INFO - Started process (PID=6533) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:02:28.760+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T19:02:28.763+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:02:28.763+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:02:28.797+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:02:28.823+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:02:28.823+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T19:02:28.845+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:02:28.845+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T19:02:28.870+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.117 seconds
+[2026-03-10T19:02:59.656+0000] {processor.py:186} INFO - Started process (PID=6553) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:02:59.657+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T19:02:59.660+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:02:59.659+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:02:59.677+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:02:59.706+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:02:59.705+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T19:02:59.729+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:02:59.729+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T19:02:59.753+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.103 seconds
+[2026-03-10T19:03:30.516+0000] {processor.py:186} INFO - Started process (PID=6573) to work on /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:03:30.517+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/master_processing_dag.py for tasks to queue
+[2026-03-10T19:03:30.520+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:03:30.519+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:03:30.543+0000] {processor.py:925} INFO - DAG(s) '01_master_processing_pipeline' retrieved from /opt/airflow/dags/master_processing_dag.py
+[2026-03-10T19:03:30.568+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:03:30.568+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-10T19:03:30.590+0000] {logging_mixin.py:190} INFO - [2026-03-10T19:03:30.590+0000] {dag.py:4180} INFO - Setting next_dagrun for 01_master_processing_pipeline to 2026-03-09 00:00:00+00:00, run_after=2026-03-10 00:00:00+00:00
+[2026-03-10T19:03:30.618+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/master_processing_dag.py took 0.110 seconds
