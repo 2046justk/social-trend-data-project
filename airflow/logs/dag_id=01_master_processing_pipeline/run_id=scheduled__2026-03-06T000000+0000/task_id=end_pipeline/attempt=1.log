@@ -1,0 +1,22 @@
+[2026-03-07T22:43:56.023+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-07T22:43:56.060+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 01_master_processing_pipeline.end_pipeline scheduled__2026-03-06T00:00:00+00:00 [queued]>
+[2026-03-07T22:43:56.072+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 01_master_processing_pipeline.end_pipeline scheduled__2026-03-06T00:00:00+00:00 [queued]>
+[2026-03-07T22:43:56.073+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-03-07T22:43:56.093+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): end_pipeline> on 2026-03-06 00:00:00+00:00
+[2026-03-07T22:43:56.102+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '01_master_processing_pipeline', 'end_pipeline', 'scheduled__2026-03-06T00:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/master_processing_dag.py', '--cfg-path', '/tmp/tmpz0qoqh3e']
+[2026-03-07T22:43:56.109+0000] {standard_task_runner.py:105} INFO - Job 25: Subtask end_pipeline
+[2026-03-07T22:43:56.120+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=911) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-07T22:43:56.121+0000] {standard_task_runner.py:72} INFO - Started process 912 to run task
+[2026-03-07T22:43:56.574+0000] {task_command.py:467} INFO - Running <TaskInstance: 01_master_processing_pipeline.end_pipeline scheduled__2026-03-06T00:00:00+00:00 [running]> on host ca19d0b0f07a
+[2026-03-07T22:43:56.707+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='khang_data_guy' AIRFLOW_CTX_DAG_ID='01_master_processing_pipeline' AIRFLOW_CTX_TASK_ID='end_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2026-03-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-06T00:00:00+00:00'
+[2026-03-07T22:43:56.710+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-07T22:43:56.765+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-07T22:43:56.767+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "✅ Hoàn tất toàn bộ chuỗi xử lý!"']
+[2026-03-07T22:43:56.779+0000] {subprocess.py:99} INFO - Output:
+[2026-03-07T22:43:56.786+0000] {subprocess.py:106} INFO - ✅ Hoàn tất toàn bộ chuỗi xử lý!
+[2026-03-07T22:43:56.786+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-07T22:43:56.813+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-07T22:43:56.814+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=01_master_processing_pipeline, task_id=end_pipeline, run_id=scheduled__2026-03-06T00:00:00+00:00, execution_date=20260306T000000, start_date=20260307T224356, end_date=20260307T224356
+[2026-03-07T22:43:56.866+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-07T22:43:56.883+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-07T22:43:56.886+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

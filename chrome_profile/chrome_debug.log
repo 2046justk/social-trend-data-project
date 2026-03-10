@@ -1,0 +1,18 @@
+[13900:9260:0127/145454.215:INFO:components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc:206] No machine level policy manager exists.
+[10412:8476:0127/145454.391:INFO:third_party\webrtc\rtc_base\cpu_info.cc:75] Available number of cores: 8
+[15396:23868:0127/145454.480:VERBOSE1:components\viz\service\main\viz_main_impl.cc:86] VizNullHypothesis is disabled (not a warning)
+[4084:25464:0127/145454.634:INFO:third_party\webrtc\rtc_base\cpu_info.cc:75] Available number of cores: 8
+[2332:352:0127/145454.816:INFO:third_party\webrtc\rtc_base\cpu_info.cc:75] Available number of cores: 8
+[13900:9260:0127/145454.846:INFO:CONSOLE:0] "The service worker navigation preload request was cancelled before 'preloadResponse' settled. If you intend to use 'preloadResponse', use waitUntil() or respondWith() to wait for the promise to settle.", source:  (0)
+[10368:21500:0127/145454.863:INFO:third_party\webrtc\rtc_base\cpu_info.cc:75] Available number of cores: 8
+[19904:1676:0127/145457.340:INFO:third_party\webrtc\rtc_base\cpu_info.cc:75] Available number of cores: 8
+[13900:9260:0127/145457.845:WARNING:chrome\browser\media\prefs\capture_device_ranking.h:255] Can't initialize the value of media.audio_input.user_preference_ranking because media.default_audio_capture_device isn't registered or is empty
+[13900:9260:0127/145457.846:WARNING:chrome\browser\media\prefs\capture_device_ranking.h:255] Can't initialize the value of media.video_input.user_preference_ranking because media.default_video_capture_Device isn't registered or is empty
+[13900:9260:0127/145457.846:WARNING:chrome\browser\media\prefs\capture_device_ranking.h:255] Can't initialize the value of media.audio_input.user_preference_ranking because media.default_audio_capture_device isn't registered or is empty
+[13900:9260:0127/145457.846:WARNING:chrome\browser\media\prefs\capture_device_ranking.h:255] Can't initialize the value of media.video_input.user_preference_ranking because media.default_video_capture_Device isn't registered or is empty
+[13900:9960:0127/145500.161:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[13900:9260:0127/145508.082:INFO:CONSOLE:0] "The service worker navigation preload request was cancelled before 'preloadResponse' settled. If you intend to use 'preloadResponse', use waitUntil() or respondWith() to wait for the promise to settle.", source:  (0)
+[13900:9260:0127/145508.652:INFO:CONSOLE:0] "The service worker navigation preload request was cancelled before 'preloadResponse' settled. If you intend to use 'preloadResponse', use waitUntil() or respondWith() to wait for the promise to settle.", source:  (0)
+[13900:9260:0127/145508.935:WARNING:chrome\browser\media\prefs\capture_device_ranking.h:255] Can't initialize the value of media.audio_input.user_preference_ranking because media.default_audio_capture_device isn't registered or is empty
+[13900:9260:0127/145508.935:WARNING:chrome\browser\media\prefs\capture_device_ranking.h:255] Can't initialize the value of media.video_input.user_preference_ranking because media.default_video_capture_Device isn't registered or is empty
+[13900:9960:0127/145528.417:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT

@@ -1,0 +1,41 @@
+[2026-03-09T08:29:38.953+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-09T08:29:38.976+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 03_mock_social_ingestion.run_smart_mock_script manual__2026-03-09T08:29:35.911134+00:00 [queued]>
+[2026-03-09T08:29:38.990+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 03_mock_social_ingestion.run_smart_mock_script manual__2026-03-09T08:29:35.911134+00:00 [queued]>
+[2026-03-09T08:29:38.992+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2026-03-09T08:29:39.006+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_smart_mock_script> on 2026-03-09 08:29:35.911134+00:00
+[2026-03-09T08:29:39.015+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '03_mock_social_ingestion', 'run_smart_mock_script', 'manual__2026-03-09T08:29:35.911134+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/03_mock_social_ingestion.py', '--cfg-path', '/tmp/tmpsj9g3q02']
+[2026-03-09T08:29:39.018+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=6003) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-09T08:29:39.018+0000] {standard_task_runner.py:105} INFO - Job 47: Subtask run_smart_mock_script
+[2026-03-09T08:29:39.019+0000] {standard_task_runner.py:72} INFO - Started process 6004 to run task
+[2026-03-09T08:29:39.134+0000] {task_command.py:467} INFO - Running <TaskInstance: 03_mock_social_ingestion.run_smart_mock_script manual__2026-03-09T08:29:35.911134+00:00 [running]> on host fa93f86ab6a3
+[2026-03-09T08:29:39.225+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='khang_data_guy' AIRFLOW_CTX_DAG_ID='03_mock_social_ingestion' AIRFLOW_CTX_TASK_ID='run_smart_mock_script' AIRFLOW_CTX_EXECUTION_DATE='2026-03-09T08:29:35.911134+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-09T08:29:35.911134+00:00'
+[2026-03-09T08:29:39.227+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-09T08:29:39.246+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-09T08:29:39.248+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/src/ingestion/mock_social_ingestion.py']
+[2026-03-09T08:29:39.259+0000] {subprocess.py:99} INFO - Output:
+[2026-03-09T08:29:41.322+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,321 - INFO - 🚀 BẮT ĐẦU CHẠY SMART MOCK INGESTION (FB/TIKTOK)
+[2026-03-09T08:29:41.438+0000] {subprocess.py:106} INFO - /opt/***/src/ingestion/mock_social_ingestion.py:30: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+[2026-03-09T08:29:41.439+0000] {subprocess.py:106} INFO -   return pd.concat([df_topics, df_travel]).to_dict('records')
+[2026-03-09T08:29:41.455+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,455 - INFO - Đang sinh dữ liệu FB/TikTok cho: Chúng Ta Của Tương Lai
+[2026-03-09T08:29:41.561+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,561 - INFO - 💾 Đã lưu Mock Social Data vào: s3://social-trend-lake/raw/social/type=topic/entity_id=1/year=2026/month=03/day=09/hour=08/data.json
+[2026-03-09T08:29:41.562+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,561 - INFO - Đang sinh dữ liệu FB/TikTok cho: Nâng Chén Tiêu Sầu
+[2026-03-09T08:29:41.575+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,575 - INFO - 💾 Đã lưu Mock Social Data vào: s3://social-trend-lake/raw/social/type=topic/entity_id=2/year=2026/month=03/day=09/hour=08/data.json
+[2026-03-09T08:29:41.576+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,575 - INFO - Đang sinh dữ liệu FB/TikTok cho: Đừng Làm Trái Tim Anh Đau
+[2026-03-09T08:29:41.590+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,590 - INFO - 💾 Đã lưu Mock Social Data vào: s3://social-trend-lake/raw/social/type=topic/entity_id=3/year=2026/month=03/day=09/hour=08/data.json
+[2026-03-09T08:29:41.592+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,590 - INFO - Đang sinh dữ liệu FB/TikTok cho: Phim Thỏ Ơi
+[2026-03-09T08:29:41.606+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,606 - INFO - 💾 Đã lưu Mock Social Data vào: s3://social-trend-lake/raw/social/type=topic/entity_id=4/year=2026/month=03/day=09/hour=08/data.json
+[2026-03-09T08:29:41.607+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,606 - INFO - Đang sinh dữ liệu FB/TikTok cho: Nhà ba tôi một phòng
+[2026-03-09T08:29:41.623+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,623 - INFO - 💾 Đã lưu Mock Social Data vào: s3://social-trend-lake/raw/social/type=topic/entity_id=5/year=2026/month=03/day=09/hour=08/data.json
+[2026-03-09T08:29:41.625+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,623 - INFO - Đang sinh dữ liệu FB/TikTok cho: Mùi phở
+[2026-03-09T08:29:41.642+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,641 - INFO - 💾 Đã lưu Mock Social Data vào: s3://social-trend-lake/raw/social/type=topic/entity_id=6/year=2026/month=03/day=09/hour=08/data.json
+[2026-03-09T08:29:41.642+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,642 - INFO - Đang sinh dữ liệu FB/TikTok cho: Núi Bà Đen
+[2026-03-09T08:29:41.663+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,663 - INFO - 💾 Đã lưu Mock Social Data vào: s3://social-trend-lake/raw/social/type=location/entity_id=1/year=2026/month=03/day=09/hour=08/data.json
+[2026-03-09T08:29:41.664+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,663 - INFO - Đang sinh dữ liệu FB/TikTok cho: Bãi Sau Vũng Tàu
+[2026-03-09T08:29:41.687+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,687 - INFO - 💾 Đã lưu Mock Social Data vào: s3://social-trend-lake/raw/social/type=location/entity_id=2/year=2026/month=03/day=09/hour=08/data.json
+[2026-03-09T08:29:41.688+0000] {subprocess.py:106} INFO - 2026-03-09 08:29:41,687 - INFO - 🏁 KẾT THÚC.
+[2026-03-09T08:29:41.832+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-09T08:29:41.860+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-09T08:29:41.861+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=03_mock_social_ingestion, task_id=run_smart_mock_script, run_id=manual__2026-03-09T08:29:35.911134+00:00, execution_date=20260309T082935, start_date=20260309T082938, end_date=20260309T082941
+[2026-03-09T08:29:41.934+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-09T08:29:41.950+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-09T08:29:41.954+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

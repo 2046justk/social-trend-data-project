@@ -1,0 +1,68 @@
+[2026-03-06T08:04:49.803+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-06T08:04:49.895+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 01_master_processing_pipeline.process_travel_data manual__2026-03-06T07:57:46.004240+00:00 [queued]>
+[2026-03-06T08:04:49.920+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 01_master_processing_pipeline.process_travel_data manual__2026-03-06T07:57:46.004240+00:00 [queued]>
+[2026-03-06T08:04:49.921+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2026-03-06T08:04:49.985+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): process_travel_data> on 2026-03-06 07:57:46.004240+00:00
+[2026-03-06T08:04:49.994+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '01_master_processing_pipeline', 'process_travel_data', 'manual__2026-03-06T07:57:46.004240+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/master_processing_dag.py', '--cfg-path', '/tmp/tmpf1f0aec7']
+[2026-03-06T08:04:49.998+0000] {standard_task_runner.py:105} INFO - Job 16: Subtask process_travel_data
+[2026-03-06T08:04:49.999+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2007) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-06T08:04:50.000+0000] {standard_task_runner.py:72} INFO - Started process 2008 to run task
+[2026-03-06T08:04:50.081+0000] {task_command.py:467} INFO - Running <TaskInstance: 01_master_processing_pipeline.process_travel_data manual__2026-03-06T07:57:46.004240+00:00 [running]> on host eb669c802a68
+[2026-03-06T08:04:50.240+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='khang_data_guy' AIRFLOW_CTX_DAG_ID='01_master_processing_pipeline' AIRFLOW_CTX_TASK_ID='process_travel_data' AIRFLOW_CTX_EXECUTION_DATE='2026-03-06T07:57:46.004240+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-06T07:57:46.004240+00:00'
+[2026-03-06T08:04:50.242+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-06T08:04:50.292+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-06T08:04:50.295+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        export SPARK_HOME=/home/***/.local/lib/python3.12/site-packages/pyspark &&\n        python /opt/***/src/processing/travel/process_reviews_spark.py\n        ']
+[2026-03-06T08:04:50.309+0000] {subprocess.py:99} INFO - Output:
+[2026-03-06T08:04:55.852+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-03-06T08:04:55.978+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2026-03-06T08:04:55.979+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2026-03-06T08:04:55.982+0000] {subprocess.py:106} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2026-03-06T08:04:55.983+0000] {subprocess.py:106} INFO - com.amazonaws#aws-java-sdk-bundle added as a dependency
+[2026-03-06T08:04:55.984+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-0ad4223b-72aa-47cd-960c-8a6bc5cf8ea3;1.0
+[2026-03-06T08:04:55.985+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-06T08:04:56.188+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2026-03-06T08:04:56.211+0000] {subprocess.py:106} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+[2026-03-06T08:04:56.235+0000] {subprocess.py:106} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2026-03-06T08:04:56.255+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 263ms :: artifacts dl 9ms
+[2026-03-06T08:04:56.256+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2026-03-06T08:04:56.257+0000] {subprocess.py:106} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+[2026-03-06T08:04:56.257+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2026-03-06T08:04:56.258+0000] {subprocess.py:106} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2026-03-06T08:04:56.259+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-06T08:04:56.259+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-03-06T08:04:56.260+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-03-06T08:04:56.261+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-06T08:04:56.262+0000] {subprocess.py:106} INFO - 	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+[2026-03-06T08:04:56.263+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-06T08:04:56.264+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-0ad4223b-72aa-47cd-960c-8a6bc5cf8ea3
+[2026-03-06T08:04:56.264+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-06T08:04:56.266+0000] {subprocess.py:106} INFO - 	0 artifacts copied, 3 already retrieved (0kB/6ms)
+[2026-03-06T08:04:56.619+0000] {subprocess.py:106} INFO - 26/03/06 08:04:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-03-06T08:04:56.915+0000] {subprocess.py:106} INFO - Setting default log level to "WARN".
+[2026-03-06T08:04:56.916+0000] {subprocess.py:106} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-03-06T08:05:06.813+0000] {subprocess.py:106} INFO - 26/03/06 08:05:06 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[2026-03-06T08:05:17.066+0000] {subprocess.py:106} INFO - [Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 7:>                                                          (0 + 1) / 1]                                                                                🚀 Bắt đầu xử lý dữ liệu với Spark...
+[2026-03-06T08:05:17.077+0000] {subprocess.py:106} INFO - 📂 Đang đọc dữ liệu từ: s3a://social-trend-lake/raw/travel/reviews/*.json
+[2026-03-06T08:05:17.078+0000] {subprocess.py:106} INFO - 👀 [DEBUG] 5 dòng dữ liệu thô vừa đọc được:
+[2026-03-06T08:05:17.078+0000] {subprocess.py:106} INFO - +-----------------+------+---------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------+
+[2026-03-06T08:05:17.079+0000] {subprocess.py:106} INFO - |author           |rating|relative_time  |review_text                                                                                                                                                                                                                                      |platform   |crawled_at         |
+[2026-03-06T08:05:17.080+0000] {subprocess.py:106} INFO - +-----------------+------+---------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------+
+[2026-03-06T08:05:17.081+0000] {subprocess.py:106} INFO - |Lý Hải Nam       |5.0   |3 tuần trước   |Núi Bà Đen nơi tâm linh . cảnh xắc tuyệt vời phù hợp cho mọi người đến tham quan đi lễ chùa cầu bình an , hạnh phúc , công danh ... Vé vào cổng 10k / người . Vé cáp treo lên chùa , lên đỉnh vân sơn ( tượng Bà Đen ) tùy vào từng thời điểm    |google_maps|2026-01-27 14:55:41|
+[2026-03-06T08:05:17.081+0000] {subprocess.py:106} INFO - |Minh Tú Phạm     |5.0   |3 tuần trước   |Gia đình mình có chuyến đi đến núi bà Đeng. 1 địa điểm tâm Linh và check in nổi tiếng tại Tây Ninh. Đến nơi mình thấy nhiều cảnh đẹp, các khu vực được bố trí và cảnh quan đẹp. Tại đây có các khu vực vệ sinh sạch sẻ. Nhiều ngôi chùa và miếu …|google_maps|2026-01-27 14:55:41|
+[2026-03-06T08:05:17.082+0000] {subprocess.py:106} INFO - |Chloe Dang       |5.0   |3 tuần trước   |Khu vực nhiều người viếng thăm.\nCáp treo nhanh, êm. Nhân viên hướng dẫn tận tình.\nBảng chỉ dẫn rõ ràng. Đông người vẫn trật tự. Không có rác. …                                                                                                |google_maps|2026-01-27 14:55:41|
+[2026-03-06T08:05:17.083+0000] {subprocess.py:106} INFO - |Nguyen Tam Thanh |5.0   |một tháng trước|Điểm du lịch tâm linh Núi Bà Đen ở Tây Ninh với đầy đủ các dịch vụ như ăn uống, mua sắm các vật phẩm tôn giáo rất đáng để tham quan!                                                                                                             |google_maps|2026-01-27 14:55:41|
+[2026-03-06T08:05:17.083+0000] {subprocess.py:106} INFO - |Hoàng Linh Trương|5.0   |3 tuần trước   |Cuối tuần tụi mình làm chuyến hiking. Lần đầu tiên mình chạm vào mây, ngắm cảnh thiên nhiên từ trên độ cao ~1km, khá đuối nha mng, nhưng rất đáng để trải nghiệm.                                                                                |google_maps|2026-01-27 14:55:41|
+[2026-03-06T08:05:17.084+0000] {subprocess.py:106} INFO - +-----------------+------+---------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+-------------------+
+[2026-03-06T08:05:17.084+0000] {subprocess.py:106} INFO - only showing top 5 rows
+[2026-03-06T08:05:17.085+0000] {subprocess.py:106} INFO - 
+[2026-03-06T08:05:17.085+0000] {subprocess.py:106} INFO - 📊 Số lượng bản ghi thô tìm thấy: 80
+[2026-03-06T08:05:17.085+0000] {subprocess.py:106} INFO - 🧹 Đang làm sạch dữ liệu...
+[2026-03-06T08:05:17.086+0000] {subprocess.py:106} INFO - 📊 Số lượng bản ghi sau khi làm sạch: 80
+[2026-03-06T08:05:17.086+0000] {subprocess.py:106} INFO - 💾 Đang ghi dữ liệu sạch xuống: s3a://social-trend-lake/silver/travel/reviews/
+[2026-03-06T08:05:17.087+0000] {subprocess.py:106} INFO - ✅ Xử lý hoàn tất! Data đã sẵn sàng ở Silver Layer.
+[2026-03-06T08:05:17.626+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-06T08:05:17.756+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-06T08:05:17.757+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=01_master_processing_pipeline, task_id=process_travel_data, run_id=manual__2026-03-06T07:57:46.004240+00:00, execution_date=20260306T075746, start_date=20260306T080449, end_date=20260306T080517
+[2026-03-06T08:05:17.808+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-06T08:05:17.849+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-06T08:05:17.853+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

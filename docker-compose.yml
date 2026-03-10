@@ -1,140 +1,229 @@
-version: '3'
+version: '3.8'
+
+# ==========================================
+# 1. CẤU HÌNH CHUNG CHO AIRFLOW (DRY Principle)
+# ==========================================
+x-airflow-common:
+  &airflow-common
+  build: ./airflow
+  env_file:
+    - .env
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+    AWS_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+    AWS_DEFAULT_REGION: us-east-1
+    AIRFLOW_CONN_AWS_DEFAULT: aws://${MINIO_ROOT_USER}:${MINIO_ROOT_PASSWORD}@?host=http%3A%2F%2Fminio%3A9000
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/plugins:/opt/airflow/plugins
+    - ./src:/opt/airflow/src
+    - ./data_generator:/opt/airflow/data_generator
+  depends_on:
+    &airflow-common-depends-on
+    postgres:
+      condition: service_healthy
+    minio:
+      condition: service_healthy
 
 services:
-  # 1. DATABASE NGUỒN & METASTORE (MySQL)
-  # Dùng chung cho giả lập Source và làm Hive Metastore
-  mysql:
-    image: mysql:8.0
-    container_name: mysql_db
+  # ==========================================
+  # 2. METADATA DATABASE (Postgres)
+  # ==========================================
+  postgres:
+    image: postgres:13
+    container_name: postgres_metadata
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: social_trend_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-    ports:
-      - "3306:3306"
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
-      - mysql_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}"]
+      interval: 10s
+      retries: 5
+    restart: always
 
-  # 2. STORAGE LAYER (Hadoop HDFS)
-  # Namenode: Quản lý file system
-  namenode:
-    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
-    container_name: namenode
-    environment:
-      - CLUSTER_NAME=test
-    env_file:
-      - ./docker/hadoop/hadoop.env
+  # ==========================================
+  # 3. DATA LAKE STORAGE (MinIO S3)
+  # ==========================================
+  minio:
+    image: minio/minio
+    container_name: minio_s3
     ports:
-      - "9870:9870" # Cổng Web UI để bạn vào xem HDFS như anh Cảnh
-      - "9000:9000" # Cổng để Spark kết nối vào
-    volumes:
-      - namenode_data:/hadoop/dfs/name
-
-  # Datanode: Nơi lưu trữ dữ liệu thật
-  datanode:
-    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
-    container_name: datanode
+      - "9000:9000"
+      - "9001:9001"
     environment:
-      SERVICE_PRECONDITION: "namenode:9870"
-    env_file:
-      - ./docker/hadoop/hadoop.env
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    command: server /data --console-address ":9001"
     volumes:
-      - datanode_data:/hadoop/dfs/data
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
 
-  # 3. WAREHOUSE LAYER (Hive)
-  # Hive Server: Cổng giao tiếp JDBC
-  hive-server:
-    image: bde2020/hive:2.3.2-postgresql-metastore
-    container_name: hive-server
-    # Load cấu hình Hadoop (để biết namenode chạy port 9000)
-    env_file:
-      - ./docker/hadoop/hadoop.env
-    environment:
-      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-metastore-postgresql:5432/metastore"
-      SERVICE_PRECONDITION: "hive-metastore:9083"
+  # ==========================================
+  # 4. ORCHESTRATION (Airflow Services)
+  # ==========================================
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: airflow-webserver
+    command: webserver
     ports:
-      - "10000:10000"
-    # Mount file cấu hình DB để tránh lỗi Derby
-    volumes:
-      - ./docker/hive/hive-site.xml:/opt/hive/conf/hive-site.xml
+      - "8080:8080"
+    environment:
+      <<: *airflow-common-env
+      AIRFLOW__WEBSERVER__WORKERS: 2  # Thêm dòng này để giảm tải RAM  
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+    restart: always
+
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: airflow-scheduler
+    command: scheduler
+    restart: always
+
+  airflow-init:
+    <<: *airflow-common
+    container_name: airflow-init
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-admin}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-admin}
     depends_on:
-      - namenode
-      - datanode
-      - hive-metastore-postgresql
+      postgres:
+        condition: service_healthy
 
-  # Hive Metastore: Quản lý thông tin bảng (Schema)
-  hive-metastore:
-    image: bde2020/hive:2.3.2-postgresql-metastore
-    container_name: hive-metastore
-    # Load cấu hình Hadoop (để biết namenode chạy port 9000)
-    env_file:
-      - ./docker/hadoop/hadoop.env
-    environment:
-      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-metastore-postgresql:5432/metastore"
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-metastore-postgresql:5432"
-    command: /opt/hive/bin/hive --service metastore
-    ports:
-      - "9083:9083"
-    # Mount file cấu hình DB để tránh lỗi Derby
-    volumes:
-      - ./docker/hive/hive-site.xml:/opt/hive/conf/hive-site.xml
-    depends_on:
-      - hive-metastore-postgresql
-
-  # Database riêng cho Hive Metastore (Postgres)
-  hive-metastore-postgresql:
-    image: bde2020/hive-metastore-postgresql:2.3.0
-    container_name: hive-metastore-postgresql
-
- # 4. PROCESSING LAYER (Spark - Apache Official)
+  # ==========================================
+  # 5. PROCESSING LAYER (Spark Cluster)
+  # ==========================================
   spark-master:
-    image: apache/spark:3.5.3
+    build: ./docker/spark
+    user: root
     container_name: spark-master
     hostname: spark-master
-    user: root
     environment:
-      - SPARK_NO_DAEMONIZE=true
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_SECRET=${SPARK_RPC_AUTHENTICATION_SECRET}
     ports:
       - "9090:8080"
       - "7077:7077"
     volumes:
-      # Map file Jar vào thư mục jars của Spark để nó tự nhận diện
-      - ./jars/mysql-connector-j-8.0.33.jar:/opt/spark/jars/mysql-connector-j-8.0.33.jar
-      # Map code của bạn vào thư mục làm việc
       - ./src:/opt/spark/work-dir/src
-      - ./data_generator:/opt/spark/work-dir/data  # (Optional)
+      - ./data_generator:/opt/spark/work-dir/data_generator
+      - ./warehouse:/user/hive/warehouse
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
 
   spark-worker:
-    image: apache/spark:3.5.3
-    container_name: spark-worker
+    build: ./docker/spark
     user: root
+    container_name: spark-worker
     environment:
-      - SPARK_NO_DAEMONIZE=true
-      - SPARK_WORKER_CORES=2
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
       - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+      - SPARK_RPC_AUTHENTICATION_SECRET=${SPARK_RPC_AUTHENTICATION_SECRET}
     depends_on:
       - spark-master
     volumes:
-      # Worker cũng cần driver để đọc/ghi database
-      - ./jars/mysql-connector-j-8.0.33.jar:/opt/spark/jars/mysql-connector-j-8.0.33.jar
       - ./src:/opt/spark/work-dir/src
+      - ./data_generator:/opt/spark/work-dir/data_generator
+      - ./warehouse:/user/hive/warehouse
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
 
-# 5. SERVING LAYER (Visualization)
-  superset:
-    # Thay vì image, chúng ta dùng build
-    build: ./docker/superset
-    container_name: superset
-    ports:
-      - "8088:8088"
+  # ==========================================
+  # 6. DATA WAREHOUSE LAYER (Hive Ecosystem)
+  # ==========================================
+  hive-metastore:
+    image: apache/hive:3.1.3
+    container_name: hive-metastore
+    restart: always
     environment:
-      SUPERSET_SECRET_KEY: "your_secret_key_must_be_very_long_and_random"
+      SERVICE_NAME: metastore
+      DB_DRIVER: postgres
+    volumes:
+      - ./warehouse:/user/hive/warehouse
+      - ./drivers/postgresql-42.2.25.jar:/opt/hive/lib/postgresql-42.2.25.jar
     depends_on:
-      - hive-server
+      - postgres
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        echo '⏳ Đợi Postgres 10s...';
+        sleep 10;
+        
+        echo '🛠 Init Schema (Ép buộc dùng Postgres)...';
+        /opt/hive/bin/schematool -dbType postgres -initSchema -url "jdbc:postgresql://postgres:5432/metastore_db?createDatabaseIfNotExist=true" -userName airflow -passWord airflow --verbose || echo '✅ Schema already exists!';
+        
+        echo '🚀 Khởi động Hive Metastore...';
+        # Móc thư viện AWS S3 từ Hadoop vào cho Hive
+        export HADOOP_CLASSPATH=/opt/hadoop/share/hadoop/tools/lib/*:$HADOOP_CLASSPATH
+        
+        # Nhét toàn bộ cấu hình Postgres và MinIO trực tiếp vào lệnh chạy
+        exec /opt/hive/bin/hive --service metastore \
+          --hiveconf javax.jdo.option.ConnectionURL="jdbc:postgresql://postgres:5432/metastore_db?createDatabaseIfNotExist=true" \
+          --hiveconf javax.jdo.option.ConnectionDriverName=org.postgresql.Driver \
+          --hiveconf javax.jdo.option.ConnectionUserName=airflow \
+          --hiveconf javax.jdo.option.ConnectionPassword=airflow \
+          --hiveconf fs.s3.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+          --hiveconf fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+          --hiveconf fs.s3a.endpoint=http://minio:9000 \
+          --hiveconf fs.s3a.access.key=minio_admin \
+          --hiveconf fs.s3a.secret.key=minio_password_secure_123 \
+          --hiveconf fs.s3a.path.style.access=true
 
+  hive-server:
+    image: apache/hive:3.1.3  # Trở lại dùng image gốc
+    container_name: hive-server
+    environment:
+      SERVICE_NAME: hiveserver2
+      HIVE_SITE_CONF_hive_metastore_uris: "thrift://hive-metastore:9083"
+    ports:
+      - "10000:10000"
+    depends_on:
+      - hive-metastore
+    volumes:
+      - ./warehouse:/user/hive/warehouse
+      - ./drivers/postgresql-42.2.25.jar:/opt/hive/lib/postgresql-42.2.25.jar
+
+# ==========================================
+  # 7. QUERY & SERVING LAYER (Trino)
+  # ==========================================
+  trino-coordinator:
+    image: trinodb/trino:latest
+    container_name: trino-coordinator
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./docker/trino/catalog:/etc/trino/catalog
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xmx1G
+    depends_on:
+      - minio
+      - hive-metastore
+
+# ==========================================
+# 8. VOLUMES (Lưu trữ vĩnh viễn)
+# ==========================================
 volumes:
-  mysql_data:
-  namenode_data:
-  datanode_data:
+  postgres_data:
+  minio_data:         
