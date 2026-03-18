@@ -79,4 +79,4 @@ streamlit run src/serving/app.py
 * **Giao diện Dashboard:** Truy cập `http://localhost:8501`
 
 ---
-*Dự án được phát triển với mục tiêu ứng tuyển chương trình Viettel Digital Talent.*
+*This project is developed as a comprehensive Data Engineering Portfolio, demonstrating end-to-end capabilities in designing, processing, and automating a Modern Data Stack for Social Media Analytics.*
