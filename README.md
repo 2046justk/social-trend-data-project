@@ -1,4 +1,4 @@
-# 🚀 SocialTrend V2.0: AI & Data-Driven Social Ranking Ecosystem
+# 🚀 SocialTrend V2.0: Data-Driven Social Ranking Ecosystem
 
 ![Version](https://img.shields.io/badge/version-2.0-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
